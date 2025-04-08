@@ -16,11 +16,11 @@ def load_model_and_mappings():
     return model, label_mapping, pain_clusters
 
 model, label_mapping, pain_clusters = load_model_and_mappings()
-label_mapping_rev = {v: k for k, v in label_mapping.items()}
+label_mapping_rev = {int(v): k for k, v in label_mapping.items()}
 pain_options = sorted(pain_clusters.keys())
 
 # App title
-st.title("🩺 Probable Diagnosis Predictor")
+st.title("🩺 Lower Back Pain Predictor")
 
 # Input fields
 st.header("Enter Patient Information")
