@@ -20,7 +20,7 @@ def load_model_and_mappings():
 model, label_mapping, pain_clusters, columnwise_pain_options = load_model_and_mappings()
 label_mapping_rev = {int(v): k for k, v in label_mapping.items()}
 
-st.title("🩺 Probable Diagnosis Predictor")
+st.title("🩺 Lower Back Pain Predictor")
 
 # Input fields
 st.header("Enter Patient Information")
@@ -30,7 +30,7 @@ with col1:
     gender = st.selectbox("Gender", ["Male", "Female"])
     weight = st.number_input("Weight (kg)", min_value=1, max_value=200, value=60)
 with col2:
-    duration = st.number_input("Duration of Pain (days)", min_value=1, max_value=365, value=5)
+    duration = st.number_input("Duration of Pain (motnhs)", min_value=1, max_value=365, value=5)
     side_of_pain = st.selectbox("Side of Pain", ["Left", "Right", "Both", "Center", "Other"])
 
 # Pain feature dropdowns with column-specific options
