@@ -30,7 +30,7 @@ with col1:
     gender = st.selectbox("Gender", ["Male", "Female"])
     weight = st.number_input("Weight (kg)", min_value=1, max_value=200, value=60)
 with col2:
-    duration = st.number_input("Duration of Pain (motnhs)", min_value=1, max_value=365, value=5)
+    duration = st.number_input("Duration of Pain (months)", min_value=1, max_value=365, value=5)
     side_of_pain = st.selectbox("Side of Pain", ["Left", "Right", "Both", "Center", "Other"])
 
 # Pain feature dropdowns with column-specific options
