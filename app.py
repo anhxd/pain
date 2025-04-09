@@ -35,11 +35,23 @@ with col2:
 
 # Pain feature dropdowns with column-specific options
 st.subheader("Pain Site and Features")
+
+helper_texts = {
+    "Site and Features of Pain 1": "Main site of pain (primary location)",
+    "Site and Features of Pain 2": "Pain that radiates or spreads from main site",
+    "Site and Features of Pain 3": "Additional pain locations or referred pain",
+    "Site and Features of Pain 4": "Any other associated pain features",
+    "Site and Features of Pain 5": "Any other associated pain features",
+    "Site and Features of Pain 6": "Any other associated pain features",
+    "Site and Features of Pain 7": "Any other associated pain features",
+}
+
 pain_inputs = []
 for i in range(1, 8):
     col_name = f"Site and Features of Pain {i}"
     options = ["Unknown"] + columnwise_pain_options.get(col_name, [])
-    selected = st.selectbox(col_name, options)
+    st.markdown(f"**{col_name}:** {helper_texts[col_name]}")
+    selected = st.selectbox(f"Select {col_name}", options, key=col_name)
     pain_inputs.append(pain_clusters.get(selected, 0))
 
 # Encode inputs
